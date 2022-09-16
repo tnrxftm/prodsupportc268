@@ -1,0 +1,58 @@
+    1  clear
+    2  cd
+    3  pwd
+    4  mkdir Algo1
+    5  cd Algo1
+    6  mkdir config bin logs scripts
+    7  ls
+    8  cd config
+    9  touch config.config variables
+   10  cd ..
+   11  cd scripts
+   12  touch start.sh stop.sh admin.sh
+   13  cd ..
+   14  cd logs
+   15  touch today.log
+   16  cd
+   17  ls -lR
+   18  cd config
+   19  cd Algo1
+   20  ls
+   21  cd config
+   22  ls
+   23  pwd
+   24  cd
+   25  rm /home/ec2-user/Algo1/config/variables
+   26  cd Algo1
+   27  ls
+   28  rm -rf bin
+   29  ls
+   30  cd
+   31  cd Algo1
+   32  mkdir bin
+   33  ls
+   34  cd logs
+   35  mkdir oldlogs
+   36  ls
+   37  cd oldlogs
+   38  mkdir 2019 2018 2017
+   39  cd 2017
+   40  touch 2017.log
+   41  cd ..
+   42  cd 2018
+   43  touch 2018.log
+   44  cd ..
+   45  cd 2019
+   46  touch 2019.log
+   47  cd
+   48  rm -rf /home/ec2-user/Algo1/logs/oldlogs
+   49  pwd
+   50  find /home/ec2-user -name*.sh
+   51  find /home/ec2-user -name *.sh
+   52  cd Algo1
+   53  ls
+   54  cd scripts
+   55  rm s*.sh
+   56  ls
+   57  cd
+   58  history > FatimaTenorio.220916.module3
