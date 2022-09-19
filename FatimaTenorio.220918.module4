@@ -1,0 +1,85 @@
+    1  clear
+    2  STOCK=AAPL
+    3  echo $STOCK
+    4  echo ${STOCK}_US
+    5  STOCK=AAPL_US
+    6  PRICE=290.84
+    7  echo The current price of $STOCK is $PRICE
+    8  uname
+    9  logname
+   10  WHOAMI=`logname`
+   11  echo $WHOAMI
+   12  SERVERTYPE=$(uname)
+   13  echo $SERVERTYPE
+   14  CMD="uname -i"
+   15  echo $CMD
+   16  echo `$CMD`
+   17  uname -i
+   18  cd
+   19  mkdir scripts
+   20  echo $PATH
+   21  ls
+   22  cd scripts
+   23  pwd
+   24  cd
+   25  export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin:/home/ec2-user/scripts
+   26  echo $PATH
+   27  rm -rf Algo1
+   28  ls
+   29  mkdir Payment1
+   30  cd Payment1
+   31  mkdir logs configurations scripts
+   32  cd scripts
+   33  touch start.sh
+   34  cd ..
+   35  cd configurations
+   36  touch instance.properties
+   37  ls -ltr
+   38  chmod +r,o=wx
+   39  chmod +r,o+wx
+   40  chmod +r
+   41  cd
+   42  cd PAyment1
+   43  cd Payment1
+   44  ls
+   45  cd configurations
+   46  ks
+   47  ls
+   48  cd instance.properties
+   49  chmod +r instance.properties
+   50  chmod +r,o=wx instance.properties
+   51  ls -ltr
+   52  chmod +r,o=rwx instance.properties
+   53  ls -ltr
+   54  cd ..
+   55  ls
+   56  cd scripts
+   57  chmod +x,go=rw
+   58  chmod +x,go=rw start.sh
+   59  ls -ltr
+   60  chmod +x,go=rwx start.sh
+   61  cd
+   62  man cat > cat.output
+   63  chmod g+wx cat.output
+   64  ls -ltr
+   65  chmod u-w cat.output
+   66  ls -ltr
+   67  cd
+   68  pwd
+   69  ls
+   70  rm -rf Payment1
+   71  ls
+   72  rm -ri cat.output
+   73  ls
+   74  rm -ri cat.output
+   75  ls
+   76  mkdir temp
+   77  cd temp
+   78  pwd
+   79  cd
+   80  MYTEMP=/home/ec2-user/temp
+   81  echo $MYTEMP
+   82  unset MYTEMP
+   83  echo $MYTEMP
+   84  rm -rf temp
+   85  history > FatimaTenorio.220918.module4
