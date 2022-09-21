@@ -1,0 +1,435 @@
+    1  cd
+    2  pwd
+    3  /var/log
+    4  cd/var/log
+    5  cd /var/log
+    6  cd ..
+    7  cd ~ /var/log
+    8  cd /var/log
+    9  cd .. /var/log
+   10  cd ~/var/log
+   11  clear
+   12  cd /home
+   13  pwd
+   14  ls
+   15  mkdir c268
+   16  ls
+   17  cd c268
+   18  sudo yum install git
+   19  clear
+   20  cd
+   21  clear
+   22  cd
+   23  pwd
+   24  mkdir Algo1
+   25  cd Algo1
+   26  mkdir config bin logs scripts
+   27  ls
+   28  cd config
+   29  touch config.config variables
+   30  cd ..
+   31  cd scripts
+   32  touch start.sh stop.sh admin.sh
+   33  cd ..
+   34  cd logs
+   35  touch today.log
+   36  cd
+   37  ls -lR
+   38  cd config
+   39  cd Algo1
+   40  ls
+   41  cd config
+   42  ls
+   43  pwd
+   44  cd
+   45  rm /home/ec2-user/Algo1/config/variables
+   46  cd Algo1
+   47  ls
+   48  rm -rf bin
+   49  ls
+   50  cd
+   51  cd Algo1
+   52  mkdir bin
+   53  ls
+   54  cd logs
+   55  mkdir oldlogs
+   56  ls
+   57  cd oldlogs
+   58  mkdir 2019 2018 2017
+   59  cd 2017
+   60  touch 2017.log
+   61  cd ..
+   62  cd 2018
+   63  touch 2018.log
+   64  cd ..
+   65  cd 2019
+   66  touch 2019.log
+   67  cd
+   68  rm -rf /home/ec2-user/Algo1/logs/oldlogs
+   69  pwd
+   70  find /home/ec2-user -name*.sh
+   71  find /home/ec2-user -name *.sh
+   72  cd Algo1
+   73  ls
+   74  cd scripts
+   75  rm s*.sh
+   76  ls
+   77  cd
+   78  history > FatimaTenorio.220916.module3
+   79  ls
+   80  cd prodsupportc268/
+   81  pwd
+   82  /home/ec2-user/prodsupportc268
+   83  cd
+   84  cp FatimaTenorio.220916.module2 FatimaTenorio.220916.module3 /home/ec2-user/prodsupportc268
+   85  cd prodsupportc268/
+   86  ls
+   87  git add .
+   88  git commit -m "Basic Linux commands and Filesystem exercises"
+   89  git push
+   90  clear
+   91  STOCK=AAPL
+   92  echo $STOCK
+   93  echo ${STOCK}_US
+   94  STOCK=AAPL_US
+   95  PRICE=290.84
+   96  echo The current price of $STOCK is $PRICE
+   97  uname
+   98  logname
+   99  WHOAMI=`logname`
+  100  echo $WHOAMI
+  101  SERVERTYPE=$(uname)
+  102  echo $SERVERTYPE
+  103  CMD="uname -i"
+  104  echo $CMD
+  105  echo `$CMD`
+  106  uname -i
+  107  cd
+  108  mkdir scripts
+  109  echo $PATH
+  110  ls
+  111  cd scripts
+  112  pwd
+  113  cd
+  114  export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin:/home/ec2-user/scripts
+  115  echo $PATH
+  116  rm -rf Algo1
+  117  ls
+  118  mkdir Payment1
+  119  cd Payment1
+  120  mkdir logs configurations scripts
+  121  cd scripts
+  122  touch start.sh
+  123  cd ..
+  124  cd configurations
+  125  touch instance.properties
+  126  ls -ltr
+  127  chmod +r,o=wx
+  128  chmod +r,o+wx
+  129  chmod +r
+  130  cd
+  131  cd PAyment1
+  132  cd Payment1
+  133  ls
+  134  cd configurations
+  135  ks
+  136  ls
+  137  cd instance.properties
+  138  chmod +r instance.properties
+  139  chmod +r,o=wx instance.properties
+  140  ls -ltr
+  141  chmod +r,o=rwx instance.properties
+  142  ls -ltr
+  143  cd ..
+  144  ls
+  145  cd scripts
+  146  chmod +x,go=rw
+  147  chmod +x,go=rw start.sh
+  148  ls -ltr
+  149  chmod +x,go=rwx start.sh
+  150  cd
+  151  man cat > cat.output
+  152  chmod g+wx cat.output
+  153  ls -ltr
+  154  chmod u-w cat.output
+  155  ls -ltr
+  156  cd
+  157  pwd
+  158  ls
+  159  rm -rf Payment1
+  160  ls
+  161  rm -ri cat.output
+  162  ls
+  163  rm -ri cat.output
+  164  ls
+  165  mkdir temp
+  166  cd temp
+  167  pwd
+  168  cd
+  169  MYTEMP=/home/ec2-user/temp
+  170  echo $MYTEMP
+  171  unset MYTEMP
+  172  echo $MYTEMP
+  173  rm -rf temp
+  174  history > FatimaTenorio.220918.module4
+  175  ls -l
+  176  cd coms
+  177  cat coms
+  178  cd c268
+  179  ls
+  180  cd
+  181  ls
+  182  cd prodsupportc268/
+  183  pwd
+  184  cd
+  185  cp FatimaTenorio.220918.module4 prodsupportc268
+  186  cd prodsupportc268/
+  187  ls
+  188  git add.
+  189  git add .
+  190  git commit -m "Linux exercise with variables"
+  191  git push
+  192  cd
+  193  echo $PATH
+  194  /usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/hom                                                                                                             e/ec2-user/bin
+  195  export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/hom                                                                                                             e/ec2-user/bin
+  196  export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/hom e/ec2-user/bin
+  197  echo $PATH
+  198  logname
+  199  top -u $USER
+  200  clear
+  201  ping google.com
+  202  clear
+  203  logname
+  204  clear
+  205  pwd
+  206  cd /var/log
+  207  cd ..
+  208  pwd
+  209  ls
+  210  ls -l
+  211  ls -lr
+  212  ls -lt
+  213  ls -ltr
+  214  clear
+  215  cd /
+  216  cd
+  217  man ls
+  218  cd /var
+  219  ma ls
+  220  man ls
+  221  ls -ltrSs
+  222  ls -ltrSsh
+  223  ls -ltSsh
+  224  clear
+  225  cd
+  226  clear
+  227  echo $pwd
+  228  clear
+  229  echo `pwd`
+  230  find /home -name *.sh
+  231  find /home/ec2-user -name *.sh
+  232  find .-name *.sh
+  233  clear
+  234  history
+  235  uname -a
+  236  clear
+  237  ls
+  238  cd coms
+  239  cd scripts
+  240  ls
+  241  touch fileexample.txt
+  242  cd
+  243  find ~ -name *.txt
+  244  ls
+  245  cd scripts
+  246  ls
+  247  ls -ltr
+  248  chmod o=x, gu=r fileexample.txt
+  249  chmod o+x, gu=r fileexample.txt
+  250  chmod o+x fileexample.txt
+  251  ls -ltr
+  252  chmod o-x fileexample.txt
+  253  ls -ltr
+  254  chmod u+x fileexample.txt
+  255  ls -ltr
+  256  chmod u-x fileexample.txt
+  257  ls -ltr
+  258  chmod u=wx,go=r fileexample.txt
+  259  ls -ltr
+  260  chmod u=rw,g=rw fileexample.txt
+  261  ls -ltr
+  262  chmod +r,u=wx fileexample.txt
+  263  ls -ltr
+  264  clear
+  265  ps -ef
+  266  ps -ef | grep
+  267  ps -ef | grep $USER
+  268  ps -ef | grep logname
+  269  ps -ef | grep (logname)
+  270  ps -ef | grep `logname`
+  271  ps -ef | grep $(logname)
+  272  clear
+  273  ps -ef | egrep "$$|cmd"
+  274  ps -ef | grep cmd
+  275  ps -ef | grep $$
+  276  clear
+  277  echo $PATH
+  278  vi hello
+  279  vi another
+  280  rm hello
+  281  rm another
+  282  ls
+  283  vi avengers
+  284  vi test
+  285  wc avengers
+  286  vi avengers
+  287  wc -l avengers
+  288  vi avengers
+  289  vi avengers.FatimaTenorio
+  290  rm avengeres.FatimaTenorio
+  291  rm avengers.FatimaTenorio
+  292  ls
+  293  mv avengers avengers.FatimaTenorio
+  294  vi avengers.FatimaTenorio
+  295  history > 220920.FatimaTenorio.EditFilesP1
+  296  history
+  297  clear
+  298  ps -ef
+  299  clear
+  300  ps
+  301  ps -ef
+  302  logname
+  303  $USER
+  304  echo $USER
+  305  ps -ef | grep `logname`
+  306  ps -ef | grep -v `logname`
+  307  ps -ef $$
+  308  ps -f $$
+  309  ptree $$
+  310  pstree $$
+  311  pstree -shapu $$
+  312  man pstree
+  313  ps -eo user,pid,cmd
+  314  ps -eo pid > list
+  315  ls
+  316  sleep 300 &
+  317  ps -ef | grep sleep
+  318  kill 32738
+  319  ps -ef | grep sleep
+  320  top
+  321  top -u root
+  322  top
+  323  top -u ec2-user
+  324  top
+  325  ping yahoo.com
+  326  traceroute yahoo.com > yahoo.route
+  327  less yahoo.route
+  328  ln -s yahoo.route route
+  329  ls
+  330  ls -ltr
+  331  netstat -a > output
+  332  mkdir network
+  333  mv yahoo.route output ~/network
+  334  network
+  335  cd network
+  336  ls
+  337  ifconfig
+  338  history > FatimaTenorio.220920.module6
+  339  history
+  340  clear
+  341  ls
+  342  cd
+  343  ls
+  344  history
+  345  man ps
+  346  ps -ef
+  347  history
+  348  ls
+  349  vi newOrders.log 
+  350  mv newOrders.log newOrders.FatimaTenorio
+  351  find Fatima* ~
+  352  clear
+  353  ls
+  354  cd network
+  355  ls
+  356  cp FatimaTenorio.220920.module6 ~/prodsupportc268/
+  357  cd
+  358  cd prodsupportc268/
+  359  git add .
+  360  git commit -m "Health of a server"
+  361  git push
+  362  clear
+  363  cd
+  364  clear
+  365  ls -ltr
+  366  clear
+  367  ps -ef
+  368  logname
+  369  ps -ef | grep $USER
+  370* 
+  371  ps -ef | grep -v $USER
+  372  man grep
+  373  ps -f $$
+  374  man pstree
+  375  pstree -shapu $$
+  376  ps -eo user,pid,cmd
+  377  clear
+  378  ps -oe pid > list2
+  379  ps -eo pid > list2
+  380  sleep 300 &
+  381  ps -ef | grep sleep
+  382  ps -ef | grep s
+  383  ps -ef | grep sleep
+  384  clear
+  385  ps -ef | grep sleep
+  386  top
+  387  top -u root
+  388  ping yahoo.com
+  389  traceroute yahoo.com 
+  390  netstat -a
+  391  netstat
+  392  clear
+  393  ls
+  394  network
+  395  cd network
+  396  ls
+  397  clear
+  398  cd
+  399  ls
+  400  cd network
+  401  ls
+  402  ln -s yahoo.route anotherlink
+  403  ls
+  404  cat yahoo.route
+  405  cat anotherlink
+  406  cd
+  407  ls
+  408  cat route
+  409  clear
+  410  ls
+  411  ./fixGenerator.sh &
+  412  ls
+  413  sleep 10
+  414  sleep 500 &
+  415  sleep 700 &
+  416  jobs
+  417  fg %3
+  418  sleep 10 && echo "hello world"
+  419  sleep 10 & && echo "hello world"
+  420  sleep 10 & (&& echo "hello world")
+  421  sleep 10 &; echo "hello world"
+  422  sleep 10 & ; echo "hello world"
+  423  sleep 10 && echo "hello world" &
+  424  sleep 5; man ls
+  425  ls -l
+  426  grep -v 35=D fixlog* > fixlog.log
+  427  grep -v 35=D fixlog20220921192839 > fixlog.log
+  428  grep -v 35=D fixlog20220921192839.log > fixlog.log
+  429  grep 35=D || grep 35=8 fixlog.log 
+  430  grep 35=D fixlog.log || grep 35=8 fixlog.log 
+  431  watch date
+  432  ./ fixGenerator.sh
+  433  ./fixGenerator.sh &
+  434  watch "wc -l fixlog*"
+  435  history > FatimaTenorio.220921.module9
