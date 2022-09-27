@@ -1,0 +1,85 @@
+#!/bin/bash
+
+: '
+
+Asks users  for min of 5 integers
+at 5 we ask if they want to input more
+if they are done, we perform different calculations
+by caling the function
+
+'
+ctr=6 #so my counting for the second part starts at 6
+
+#-------------creating a function for calculations---------------
+calculations_function (){
+        local intarray=("$@")
+        prod=1 #temporary place holder
+	for val in ${intarray[@]} #loop to multiply elements
+        do
+                (( prod=$prod*$val ))
+        done
+        echo "Product: $prod"
+	sum=`IFS=+; echo "$((${intarray[*]}))"` #change the IFS to + and execute it as a code
+        echo "Sum: $sum" 
+	printf 'Average: %.3f\n' $(echo $sum/${#intarray[@]} | bc -l) #using sum and dividing it to length (c style so decimals will show
+	#echo "Average: $(( $sum/${#intarray[@]} ))" #using sum and dividing to the length of array
+        IFS=$'\n' #setting my IFS to newline
+        max=`echo "${intarray[*]}" | sort -n | tail -n1` #get the last value
+        min=`echo "${intarray[*]}" | sort -n | head -n1` #get the first value
+        unset IFS
+        echo "Max value: $max"
+        echo "Min value: $min"
+}
+#--------------Code-------------------
+echo "Enter a minimum of 5 integers"
+
+for i in {1..5} #prompt the user to input 5 integers
+do
+        echo "Enter integer $i :"
+        read num
+        if [[ $num =~ ^(-)?[0-9]+$ ]]; then #this condition checks if the input is integer negative or positive whole numbers
+                intarray+=($num) #adds into array if condition is met
+        else
+                echo "You must only input integers"
+                exit 1 #stops executing if the input is not integer
+        fi
+done
+echo "Values entered: ${intarray[@]}"
+echo "Do you want to input more than 5? (y/n)"
+read ans
+ans=`echo $ans | tr '[:upper:]' '[:lower:]'`
+
+if [ $ans == "n" ] || [ $ans == "no" ]; then
+	echo "Calculations will now start"
+	calculations_function "${intarray[@]}"  #if the user doesnt want to input more than 5 then we call the function to perform calculations
+elif [ $ans == "y" ] || [ $ans == "yes" ]; then
+	while [ $ans == "y" ] || [ $ans == "yes" ] && [ $ctr -le 10 ]; do #while ans is yes and count is <=10 then we can still ask for inputs
+		echo "Enter integer $ctr :"
+		read num
+		if [[ $num =~ ^(-)?[0-9]+$ ]]; then #check if user input is integer
+			intarray+=($num)
+		else
+			echo "You must only input integers"
+			exit 1
+		fi
+		if (($ctr < 10)); then #we ask user everytime if they want to input more 
+			echo "Do you want to continue? (y/n)"
+			read ans
+			ans=`echo $ans | tr '[:upper:]' '[:lower:]'`
+		elif (($ctr == 10)); then #reach the limit of the input
+			echo "Values entered: ${intarray[@]}"
+			echo "Calculations will now start"
+        		calculations_function "${intarray[@]}"
+		fi
+		if [ $ans == 'n' ] || [ $ans == "no" ]; then #if user wants to stop we call function again
+			echo "Values entered: ${intarray[@]}"
+			echo "Calculations will now start"
+			calculations_function "${intarray[@]}"
+		fi
+		((ctr++))
+	done
+else
+	echo "Invalid option"
+	exit 1
+fi
+exit 0

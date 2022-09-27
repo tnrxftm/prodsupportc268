@@ -1,0 +1,58 @@
+#!/bin/bash
+
+: '
+
+Checks user password and uses status codes 
+to check if certain requirements are met
+
+
+'
+password_checker () { #function that checks the password
+        echo "Enter your password"
+        read pword
+        if [[ ${#pword} -ge 8 ]]; then #checks if password is 8 chars
+                 echo $pword | egrep -q [0-9] #checks if it has numbers
+                 if [[ $? -eq 0 ]]; then #if status code is successful then go to next requirement
+                         echo $pword | egrep -q [A-Z]
+                         if [[ $? -eq 0 ]]; then
+                                 echo $pword | egrep -q [a-z]
+                                  if [[ $? -eq 0 ]]; then
+                                          echo "Password meets all requirements"
+					  return 0 #return value is successful status code if password meets all requirements
+				  else
+					  echo "Password must contain lowercase letters"
+                                          return 1
+                                  fi
+                         else
+                                 echo "Password must contain capital letters"
+                                 return 1 #return value is unsuccessful if it does not meet requirements
+                         fi
+                 else
+                         echo "Password must include numbers"
+                         return 1
+                 fi
+         else
+                 echo "Password must be at least 8 characters"
+                 return 1
+                 fi
+
+}
+
+password_checker #calls the function
+
+while [[ $? -eq 1 ]] #while the status code is still 1 we ask the user if they want to try
+do
+	echo "Do you want to try again? (y/n)"
+        read ans
+        ans=$(echo $ans | tr '[:upper:]' '[:lower:]') #defaults the answer to lowecase not case sensitive
+        if [ $ans == "y" ] || [ $ans == "yes" ]; then
+                password_checker #if user wants to try then invoke function again
+        elif [ $ans == "n" ] || [ $ans == "no" ]; then
+                echo "Good bye!"
+                exit 0
+        else
+                echo "Invalid option"
+                exit 1
+        fi
+done
+exit 0
