@@ -1,0 +1,23 @@
+#!/bin/bash
+: ' 
+
+Desc: This code prints draws 5 random numbers and a bonus number 
+for the lottery and outputs it in a file
+
+'
+
+
+tdate=`date +%Y-%m-%d`
+outfile="combinations."$tdate #create the output file with today's date
+touch $outfile #create output file
+{
+echo "The winning combination for $tdate" 
+for i in {1..5} #5 draws so we loop for 5 times
+do
+	rnum=$(( $RANDOM % 50 + 1 )) #get a random number from 1-50
+	wcomb+=($rnum) #put them all in an array
+done
+echo ${wcomb[@]}
+echo -e  "The bonus number is \n$(( $RANDOM % 10 + 1 ))" #get a random number from 1-10
+} > "$outfile" #the code chunk inside the {} will all be executed on output file
+exit 0 

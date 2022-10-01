@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Your username is $USER" #output the username
+echo "The date today is $(date +%Y-%m-%d)" #date
+echo "The time is $(TZ=':America/Toronto'  date +%r)" #get my timezone
+echo "Current directory is `pwd`"
+echo "The number of files in `pwd`  is $(ls . -l | wc -l)" #count number of lines to know no of files
+echo "The biggest file in the directory is `ls -ltrSh | tail -n 1 | awk '{print $9}'`" #sort the files by size and print the last line since its the file name
+exit 0

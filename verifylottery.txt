@@ -1,0 +1,49 @@
+#!/bin/bash
+
+: '
+
+Script to verify the lottery numbers
+checks if the lottery for that date has been drawn
+checks to see how many matches the user got
+
+'
+mctr=0
+echo "Date of the lottery you want to check (YYYY-MM-DD)"
+read ldate
+file="combinations."$ldate
+ls | grep *$ldate #check for files that has that date
+if [[ $? != 0 ]]; then #if grep status code is not 0 then there's no draw yet
+	echo "There is no data for this draw yet"
+	exit 1
+else
+	draw=$(sed -n '2p' < $file) #store the 2nd line (5 numbers) in an array
+	luckyn=$(sed -n '4p' < $file) #store the 4th line in a var
+	drawarray+=($draw) #put numbers in array
+	#bonusarray+=($luckyn)	
+fi
+for i in {1..5}; do #ask user for their lottery numbers
+	echo "Enter lottery number $i"
+	read num
+	if [[ $num =~ [^0-9] ]]; then
+		echo "You must only input numbers"
+		exit 1
+	else
+		lotteryarray+=($num) #store in array
+	fi
+done
+echo "Enter your selected bonus ball "
+read bonus
+echo "Your matches are"
+echo ${lotteryarray[@]} ${drawarray[@]} | sed 's/ /\n/g' | sort | uniq -d #compare 2 arrays
+for val in ${lotteryarray[@]}; do
+	if [[ ${drawarray[*]} =~ $val ]]; then
+		((mctr++))
+	fi
+done
+echo "You have $mctr matches"
+if [ $luckyn = $bonus ]; then #compare if user also wins bonus ball
+	echo "Congratulations you also won the bonus ball"
+else
+	echo "You did not win the bonus ball for this draw"
+fi
+exit 0
